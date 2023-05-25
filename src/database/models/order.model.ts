@@ -1,6 +1,6 @@
 import { DataTypes, Model, ModelDefined, Optional } from 'sequelize';
 import db from './index';
-import { Order } from '../../types/Order';
+import { Order } from '../../services/types/Order';
 
 type OrderInputtableTypes = Optional<Order, 'id'>;
 type OrderSequelizeModelCreator = ModelDefined<Order, OrderInputtableTypes>;

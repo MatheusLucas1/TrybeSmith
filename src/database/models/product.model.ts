@@ -1,6 +1,6 @@
 import { DataTypes, Model, ModelDefined, Optional } from 'sequelize';
 import db from './index';
-import { Product } from '../../types/Product';
+import { Product } from '../../services/types/Product';
 import Order from './order.model';
 import User from './user.model';
 
