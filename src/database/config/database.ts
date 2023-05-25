@@ -1,4 +1,4 @@
-import { Options } from 'sequelize';
+import { Options } from 'sequelize'; 
 
 const config: Options = {
   username: process.env.DB_USER || 'root',
