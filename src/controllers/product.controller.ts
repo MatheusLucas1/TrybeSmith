@@ -6,13 +6,17 @@ async function create(req: Request, res: Response) {
   const { name, price, orderId } = req.body;
   const serviceResponse = await productService.create({ name, price, orderId });
 
-  // if (serviceResponse.status !== 'SUCCESSFUL') {
-  //   return res.status(mapStatusHTTP(serviceResponse.status)).json(serviceResponse.data);  
-  // }
   const { orderId: id, ...productWithoutOrderId } = serviceResponse;
   res.status(201).json(productWithoutOrderId);
 }
 
+async function list(req: Request, res: Response) {
+  const serviceResponse = await productService.list();
+  
+  res.status(200).json(serviceResponse);
+}
+
 export default {
   create,
+  list,
 };

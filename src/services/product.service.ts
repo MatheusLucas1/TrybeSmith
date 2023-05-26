@@ -1,6 +1,7 @@
 import { Product } from 'src/services/types/Product';
 import ProductModel, { 
-  ProductInputtableTypes } from '../database/models/product.model';
+  ProductInputtableTypes,
+  ProductSequelizeModel } from '../database/models/product.model';
 
 async function create(product: ProductInputtableTypes) : Promise<Product> {
   const newProduct = await ProductModel.create(product);
@@ -8,6 +9,13 @@ async function create(product: ProductInputtableTypes) : Promise<Product> {
   return newProduct.dataValues;
 }  
 
+async function list() : Promise<ProductSequelizeModel[]> {
+  const products = await ProductModel.findAll();
+
+  return products;
+}  
+
 export default {
   create,
+  list,
 };
