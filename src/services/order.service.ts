@@ -1,6 +1,4 @@
-import OrderModel, { 
-  OrderInputtableTypes, 
-  OrderSequelizeModel } from '../database/models/order.model';
+import OrderModel from '../database/models/order.model';
 import ProductModel from '../database/models/product.model';
 
 const list = async (): Promise<{ id: number; userId: number; productIds: number[]; }[]> => {
