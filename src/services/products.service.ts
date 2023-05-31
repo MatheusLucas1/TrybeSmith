@@ -1,19 +1,15 @@
+import { Model } from 'sequelize';
 import { Product } from './types/Product';
-import ProductModel, { 
-  ProductInputtableTypes,
-  ProductSequelizeModel } from '../database/models/product.model';
+import ProductModel, { ProductInputtableTypes } from '../database/models/product.model';
 
-async function create(product: ProductInputtableTypes) : Promise<Product> {
-  const newProduct = await ProductModel.create(product);
+const create = (
+  data: ProductInputtableTypes,
+): Promise<Model<Product, ProductInputtableTypes>> => ProductModel.create(data); 
 
-  return newProduct.dataValues;
-}  
-
-async function list() : Promise<ProductSequelizeModel[]> {
-  const products = await ProductModel.findAll();
-
+const list = async (): Promise<Model<Product, ProductInputtableTypes>[]> => {
+  const products = (await ProductModel.findAll());
   return products;
-}
+};
 
 export default {
   create,

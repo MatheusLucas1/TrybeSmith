@@ -1,11 +1,11 @@
 import { Request, Response } from 'express';
-import orderService from '../services/orders.service';
+import ordersService from '../services/orders.service';
 
-async function list(req: Request, res: Response) {
-  const serviceResponse = await orderService.list();
-  
-  res.status(200).json(serviceResponse);
-}
+const list = async (req: Request, res: Response): Promise<Response> => {
+  const orders = await ordersService.list();
+
+  return res.status(200).json(orders);
+};
 
 export default {
   list,
