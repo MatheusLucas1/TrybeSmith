@@ -34,10 +34,7 @@ Ao desenvolver este projeto, utilizei aplicação dos princípios da arquitetura
 
 ```bash
 # Clone este repositório
-$ git clone git@github.com:MatheusLucas1/Trybers-and-Dragons.git
-
-# Acesse a pasta do projeto no terminal/cmd
-$ cd trybers-and-dragons
+$ git clone git@github.com:MatheusLucas1/TrybeSmith.git
 
 # Instale as dependências
 $ npm install
